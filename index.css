@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background-color: #f6f6f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+#container {
+  background-color: #ffffff;
+  width: 442px;
+  height: 581px;
+  display: flex;
+  flex-direction: column;
+  padding: 28px 50px;
+  gap: 18px;
+}
+
+#heading {
+  text-align: center;
+  color: #ff6b82;
+  font-weight: bold;
+  font-size: 21.08px;
+}
+
+#offers {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.offer {
+  display: flex;
+  box-shadow: rgba(167, 167, 167, 0.2509803922) 0px 0px 4px 0px;
+  border-radius: 12px;
+  height: 74px;
+  width: 342px;
+}
+.offer:has(> .offer-details input:checked) {
+  height: 172px;
+  background-color: #fff9fa;
+  border: 1px solid #ff6b82;
+  box-shadow: none;
+}
+.offer .discount {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff6b82;
+  width: 21%;
+  border-radius: 12px 0 0 12px;
+}
+.offer .discount p {
+  color: #ffffff;
+  text-align: center;
+  font-weight: 500;
+  font-size: 16px;
+}
+.offer .discount:has(~ .offer-details input:checked) {
+  visibility: hidden;
+  width: 0;
+}
+.offer .dashed-line {
+  width: 2px;
+  position: relative;
+  left: -1px;
+  z-index: 2;
+}
+.offer .dashed-line:has(~ .offer-details input:checked) {
+  visibility: hidden;
+  width: 0px;
+}
+.offer .offer-details {
+  position: relative;
+  left: -2px;
+  padding: 16px;
+  padding-right: 0;
+  display: flex;
+  gap: 16px;
+  width: 45%;
+  align-items: center;
+}
+.offer .offer-details:has(> input:checked) {
+  width: 60%;
+}
+.offer .offer-details input {
+  display: none;
+  width: 16px;
+  height: 16px;
+}
+.offer .offer-details input:checked + .radio-button > img {
+  display: none;
+}
+.offer .offer-details input:checked + .radio-button > img:last-child {
+  display: block;
+}
+.offer .offer-details input:checked ~ .content .small-percent-label {
+  visibility: visible;
+  width: 52px;
+}
+.offer .offer-details input:checked ~ .content .og-price {
+  visibility: visible;
+  width: auto;
+}
+.offer .offer-details .radio-button {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 16px;
+  height: 16px;
+}
+.offer .offer-details .radio-button img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 16px;
+  height: 16px;
+  margin: auto;
+}
+.offer .offer-details .radio-button img:last-child {
+  display: none;
+}
+.offer .offer-details .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+}
+.offer .offer-details .content p {
+  display: flex;
+  font-size: 14.46px;
+  font-weight: 400;
+  gap: 6px;
+}
+.offer .offer-details .content p .small-percent-label {
+  visibility: hidden;
+  background-color: #ff6b82;
+  width: 0;
+  height: 17px;
+  font-size: 12px;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  border-radius: 2px;
+  padding-top: 1.2px;
+  font-weight: normal;
+}
+.offer .offer-details .content .offer-price {
+  display: flex;
+  justify-content: start;
+  align-items: baseline;
+}
+.offer .offer-details .content .offer-price strong {
+  font-weight: bold;
+  font-size: 14.46px;
+}
+.offer .offer-details .content .offer-price .og-price {
+  visibility: hidden;
+  width: 0;
+  font-size: 9.94px;
+  color: #9f9f9f;
+  vertical-align: middle;
+  text-decoration-line: line-through;
+  text-decoration-color: #9f9f9f;
+}
+.offer .most-popular {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 30%;
+}
+.offer .most-popular p {
+  font-weight: 500;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 14px;
+  color: #ff6b82;
+}
