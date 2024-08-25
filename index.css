@@ -128,11 +128,6 @@ body {
   width: 65%;
   padding-left: 22px;
 }
-@media screen and (max-width: 442px) {
-  .offer .offer-details:has(> .main-detail input:checked) {
-    width: 75%;
-  }
-}
 .offer .offer-details:has(> .main-detail input:checked) .custom-options {
   display: flex;
   visibility: visible;
@@ -299,7 +294,15 @@ body {
   display: flex;
   justify-content: start;
   align-items: center;
-  width: 35;
+  width: 35%;
+}
+@media screen and (max-width: 442px) {
+  .offer .most-popular {
+    margin-left: 1rem;
+    margin-right: 0.5rem;
+    justify-content: center;
+    text-align: center;
+  }
 }
 .offer .most-popular p {
   font-weight: 500;
